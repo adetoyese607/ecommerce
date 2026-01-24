@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/forget_screen.dart';
 import 'package:ecommerce/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -78,7 +79,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       SizedBox(height: 10),
                       Align(
                         alignment: Alignment.centerRight,
-                        child:TextButton(onPressed: (){}, child:  Text(
+                        child:TextButton(onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgetScreen()));
+                        }, child:  Text(
                           'Forget Password',
                           style: TextStyle(
                             color: const Color.fromARGB(255, 182, 13, 13),
