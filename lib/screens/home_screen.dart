@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:introduction_screen/introduction_screen.dart';
@@ -47,8 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
             image: SvgPicture.asset('assets/splash3.svg', width: 300,),
             decoration: pageDecoration,
             footer:Padding(padding: EdgeInsetsGeometry.fromLTRB(15, 50, 15, 0), 
-            child: ElevatedButton(onPressed: (){},
-            child: Text('Lets Shop', style: TextStyle(fontSize: 18, color: Colors.white),),
+            child: ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+            },
             style: ElevatedButton.styleFrom(
               backgroundColor: Color.fromARGB(255, 182, 13, 13),
               minimumSize: Size.fromHeight(55),
@@ -56,6 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadiusGeometry.circular(8)
               )
             ),
+            child: Text('Lets Shop', style: TextStyle(fontSize: 18, color: Colors.white),),
             
             ),)
           ),
@@ -78,13 +81,18 @@ class _HomeScreenState extends State<HomeScreen> {
             color: Color.fromARGB(255, 182, 13, 13),
           ),
         ),
-         done: Text(
-          'Done',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            color: Color.fromARGB(255, 182, 13, 13),
-          ),
-        ),
+         done: InkWell(
+          onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+          },
+           child: Text(
+            'Done',
+            style: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Color.fromARGB(255, 182, 13, 13),
+            ),
+                   ),
+         ),
       dotsDecorator: DotsDecorator(
         size: Size.square(10),
         activeSize: Size(20, 10),
