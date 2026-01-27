@@ -1,3 +1,4 @@
+import 'package:ecommerce/screens/navigation_screen.dart';
 import 'package:ecommerce/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
      
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: SplashScreen(),
+      home: NavigationScreen(),
     );
   }
 }
