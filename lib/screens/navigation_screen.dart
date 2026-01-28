@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:ecommerce/screens/homepage_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class NavigationScreen extends StatefulWidget {
 class _NavigationScreenState extends State<NavigationScreen> {
   int pageIndex = 0;
   List<Widget> pages = [
-    Container(color: Colors.red),
+    HomepageScreen(),
     Container(color: Colors.blue),
     Container(color: Colors.green),
     Container(color: Colors.orange),
