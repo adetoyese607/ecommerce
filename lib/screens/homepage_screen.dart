@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 // import 'package:flutter/cupertino.dart';
+import 'package:ecommerce/screens/producct_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomepageScreen extends StatefulWidget {
@@ -149,40 +150,45 @@ class _HomepageScreenState extends State<HomepageScreen> {
                             SizedBox(
                               // height: 180,
                               // width: 200,
-                              child: Stack(
-                                children: [
-                                  AspectRatio(
-                                    aspectRatio: 1.4 / 1.5,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(10),
-                                        image: DecorationImage(
-                                          image: AssetImage(
-                                            productImages[index],
+                              child: InkWell(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProducctScreen()));
+                                },
+                                child: Stack(
+                                  children: [
+                                    AspectRatio(
+                                      aspectRatio: 1.4 / 1.5,
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          image: DecorationImage(
+                                            image: AssetImage(
+                                              productImages[index],
+                                            ),
+                                            fit: BoxFit.cover,
                                           ),
-                                          fit: BoxFit.cover,
                                         ),
                                       ),
                                     ),
-                                  ),
-                                  Positioned(
-                                    top: 10,
-                                    right: 10,
-
-                                    child: Container(
-                                      height: 30,
-                                      width: 30,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        color: Colors.white,
-                                      ),
-                                      child: Icon(
-                                        Icons.favorite_outlined,
-                                        color: Color.fromARGB(255, 182, 13, 13),
+                                    Positioned(
+                                      top: 10,
+                                      right: 10,
+                                
+                                      child: Container(
+                                        height: 30,
+                                        width: 30,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: Colors.white,
+                                        ),
+                                        child: Icon(
+                                          Icons.favorite_outlined,
+                                          color: Color.fromARGB(255, 182, 13, 13),
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                             SizedBox(width: 10),
@@ -204,7 +210,7 @@ class _HomepageScreenState extends State<HomepageScreen> {
                                   child: Text(
                                     'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
                                     style: TextStyle(
-                                      fontWeight: FontWeight.w600
+                                      fontWeight: FontWeight.w600,
                                     ),
                                     maxLines: 7,
                                     overflow: TextOverflow.ellipsis,
@@ -238,10 +244,14 @@ class _HomepageScreenState extends State<HomepageScreen> {
                     },
                   ),
                 ),
-                 SizedBox(height: 30),
+                SizedBox(height: 30),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text('Newest Products', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26   ),)),
+                  child: Text(
+                    'Newest Products',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+                  ),
+                ),
                 SizedBox(height: 20),
                 Container(
                   child: GridView.builder(

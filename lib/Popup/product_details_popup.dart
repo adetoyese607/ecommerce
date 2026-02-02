@@ -1,4 +1,5 @@
 import 'package:ecommerce/Popup/button_modal.dart';
+import 'package:ecommerce/screens/cart_screen.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsPopup extends StatefulWidget {
@@ -132,11 +133,16 @@ class _ProductDetailsPopupState extends State<ProductDetailsPopup> {
                           Text('\$40.00', style: TextStyle(fontSize: 20,color: Colors.red.shade600, fontWeight: FontWeight.bold),)
                         ],),
                         SizedBox(height: 20,),
-                         ButtonModal(
-        bgColor: Colors.red.shade600,
-        containerWidth: MediaQuery.of(context).size.width ,
-        itext: 'Checkout',
-      ),
+                         InkWell(
+                          onTap: (){
+                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>CartScreen() ));
+                          },
+                           child: ButtonModal(
+                                   bgColor: Colors.red.shade600,
+                                   containerWidth: MediaQuery.of(context).size.width ,
+                                   itext: 'Checkout',
+                                 ),
+                         ),
                   ],
                 ),
               ),
