@@ -29,7 +29,11 @@ class _CartScreenState extends State<CartScreen> {
     bool checkboxChange = true;
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back, color: Colors.black),
+        leading: InkWell(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_back, color: Colors.black)),
         title: Text(
           'Cart',
           style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
